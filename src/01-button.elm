@@ -9,7 +9,7 @@ main =
 
 -- MODEL
 
-type alias Model = Int -- -> single integer
+type alias Model = Int
 
 init : Model
 init =
@@ -18,7 +18,7 @@ init =
 
 -- UPDATE
 
-type Msg = Increment | Decrement -- -> types of messages/actions the user can send/do
+type Msg = Increment | Decrement
 
 update : Msg -> Model -> Model
 update msg model =
@@ -30,12 +30,12 @@ update msg model =
       model - 1
 
 
--- VIEW -- -> no templating language, it's all Elm!
+-- VIEW
 
 view : Model -> Html Msg
 view model =
   div []
-    [ button [ onClick Decrement ] [ text "-" ] -- -> click a button to send a message
+    [ button [ onClick Decrement ] [ text "-" ]
     , div [] [ text (String.fromInt model) ]
     , button [ onClick Increment ] [ text "+" ]
     ]
